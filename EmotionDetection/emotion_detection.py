@@ -39,4 +39,3 @@ def emotion_detector(text_to_analyze):
 if __name__ == "__main__":
     test_text = "I am so happy I am doing this."
     print(emotion_detector(test_text))
-
