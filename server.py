@@ -12,7 +12,9 @@ def detect_emotion():
     text_to_analyze = data["text"]
     result = emotion_detector(text_to_analyze)
 
-    # Formatting response as per requirements
+    if result["dominant_emotion"] is None:
+        return jsonify({"error": "Invalid text! Please try again!"}), 400
+
     response_text = (
         f"For the given statement, the system response is "
         f"'anger': {result['anger']}, 'disgust': {result['disgust']}, "
